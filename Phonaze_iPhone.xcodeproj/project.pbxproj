@@ -1,0 +1,567 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXContainerItemProxy section */
+		33D5FE542D87F14900069A88 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 33D5FE3B2D87F14800069A88 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 33D5FE422D87F14800069A88;
+			remoteInfo = Phonaze_iPhone;
+		};
+		33D5FE5E2D87F14900069A88 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 33D5FE3B2D87F14800069A88 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 33D5FE422D87F14800069A88;
+			remoteInfo = Phonaze_iPhone;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		33D5FE432D87F14800069A88 /* Phonaze_iPhone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Phonaze_iPhone.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		33D5FE532D87F14900069A88 /* Phonaze_iPhoneTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Phonaze_iPhoneTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		33D5FE5D2D87F14900069A88 /* Phonaze_iPhoneUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Phonaze_iPhoneUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		33D5FE452D87F14800069A88 /* Phonaze_iPhone */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Phonaze_iPhone;
+			sourceTree = "<group>";
+		};
+		33D5FE562D87F14900069A88 /* Phonaze_iPhoneTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Phonaze_iPhoneTests;
+			sourceTree = "<group>";
+		};
+		33D5FE602D87F14900069A88 /* Phonaze_iPhoneUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Phonaze_iPhoneUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		33D5FE402D87F14800069A88 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		33D5FE502D87F14900069A88 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		33D5FE5A2D87F14900069A88 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		33D5FE3A2D87F14800069A88 = {
+			isa = PBXGroup;
+			children = (
+				33D5FE452D87F14800069A88 /* Phonaze_iPhone */,
+				33D5FE562D87F14900069A88 /* Phonaze_iPhoneTests */,
+				33D5FE602D87F14900069A88 /* Phonaze_iPhoneUITests */,
+				33D5FE442D87F14800069A88 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		33D5FE442D87F14800069A88 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				33D5FE432D87F14800069A88 /* Phonaze_iPhone.app */,
+				33D5FE532D87F14900069A88 /* Phonaze_iPhoneTests.xctest */,
+				33D5FE5D2D87F14900069A88 /* Phonaze_iPhoneUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		33D5FE422D87F14800069A88 /* Phonaze_iPhone */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 33D5FE672D87F14900069A88 /* Build configuration list for PBXNativeTarget "Phonaze_iPhone" */;
+			buildPhases = (
+				33D5FE3F2D87F14800069A88 /* Sources */,
+				33D5FE402D87F14800069A88 /* Frameworks */,
+				33D5FE412D87F14800069A88 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				33D5FE452D87F14800069A88 /* Phonaze_iPhone */,
+			);
+			name = Phonaze_iPhone;
+			packageProductDependencies = (
+			);
+			productName = Phonaze_iPhone;
+			productReference = 33D5FE432D87F14800069A88 /* Phonaze_iPhone.app */;
+			productType = "com.apple.product-type.application";
+		};
+		33D5FE522D87F14900069A88 /* Phonaze_iPhoneTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 33D5FE6A2D87F14900069A88 /* Build configuration list for PBXNativeTarget "Phonaze_iPhoneTests" */;
+			buildPhases = (
+				33D5FE4F2D87F14900069A88 /* Sources */,
+				33D5FE502D87F14900069A88 /* Frameworks */,
+				33D5FE512D87F14900069A88 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				33D5FE552D87F14900069A88 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				33D5FE562D87F14900069A88 /* Phonaze_iPhoneTests */,
+			);
+			name = Phonaze_iPhoneTests;
+			packageProductDependencies = (
+			);
+			productName = Phonaze_iPhoneTests;
+			productReference = 33D5FE532D87F14900069A88 /* Phonaze_iPhoneTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		33D5FE5C2D87F14900069A88 /* Phonaze_iPhoneUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 33D5FE6D2D87F14900069A88 /* Build configuration list for PBXNativeTarget "Phonaze_iPhoneUITests" */;
+			buildPhases = (
+				33D5FE592D87F14900069A88 /* Sources */,
+				33D5FE5A2D87F14900069A88 /* Frameworks */,
+				33D5FE5B2D87F14900069A88 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				33D5FE5F2D87F14900069A88 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				33D5FE602D87F14900069A88 /* Phonaze_iPhoneUITests */,
+			);
+			name = Phonaze_iPhoneUITests;
+			packageProductDependencies = (
+			);
+			productName = Phonaze_iPhoneUITests;
+			productReference = 33D5FE5D2D87F14900069A88 /* Phonaze_iPhoneUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		33D5FE3B2D87F14800069A88 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1620;
+				LastUpgradeCheck = 1620;
+				TargetAttributes = {
+					33D5FE422D87F14800069A88 = {
+						CreatedOnToolsVersion = 16.2;
+					};
+					33D5FE522D87F14900069A88 = {
+						CreatedOnToolsVersion = 16.2;
+						TestTargetID = 33D5FE422D87F14800069A88;
+					};
+					33D5FE5C2D87F14900069A88 = {
+						CreatedOnToolsVersion = 16.2;
+						TestTargetID = 33D5FE422D87F14800069A88;
+					};
+				};
+			};
+			buildConfigurationList = 33D5FE3E2D87F14800069A88 /* Build configuration list for PBXProject "Phonaze_iPhone" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 33D5FE3A2D87F14800069A88;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 33D5FE442D87F14800069A88 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				33D5FE422D87F14800069A88 /* Phonaze_iPhone */,
+				33D5FE522D87F14900069A88 /* Phonaze_iPhoneTests */,
+				33D5FE5C2D87F14900069A88 /* Phonaze_iPhoneUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		33D5FE412D87F14800069A88 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		33D5FE512D87F14900069A88 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		33D5FE5B2D87F14900069A88 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		33D5FE3F2D87F14800069A88 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		33D5FE4F2D87F14900069A88 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		33D5FE592D87F14900069A88 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		33D5FE552D87F14900069A88 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 33D5FE422D87F14800069A88 /* Phonaze_iPhone */;
+			targetProxy = 33D5FE542D87F14900069A88 /* PBXContainerItemProxy */;
+		};
+		33D5FE5F2D87F14900069A88 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 33D5FE422D87F14800069A88 /* Phonaze_iPhone */;
+			targetProxy = 33D5FE5E2D87F14900069A88 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		33D5FE652D87F14900069A88 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		33D5FE662D87F14900069A88 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		33D5FE682D87F14900069A88 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Phonaze_iPhone/Preview Content\"";
+				DEVELOPMENT_TEAM = H7SJ9FJPVA;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Phonaze-iPhone-Info.plist";
+				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "Usage connect with Vision Pro";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "DB111Phonaze.Phonaze-iPhone";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		33D5FE692D87F14900069A88 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Phonaze_iPhone/Preview Content\"";
+				DEVELOPMENT_TEAM = H7SJ9FJPVA;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Phonaze-iPhone-Info.plist";
+				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "Usage connect with Vision Pro";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "DB111Phonaze.Phonaze-iPhone";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		33D5FE6B2D87F14900069A88 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = H7SJ9FJPVA;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "DB111Phonaze.Phonaze-iPhoneTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Phonaze_iPhone.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Phonaze_iPhone";
+			};
+			name = Debug;
+		};
+		33D5FE6C2D87F14900069A88 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = H7SJ9FJPVA;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "DB111Phonaze.Phonaze-iPhoneTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Phonaze_iPhone.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Phonaze_iPhone";
+			};
+			name = Release;
+		};
+		33D5FE6E2D87F14900069A88 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = H7SJ9FJPVA;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "DB111Phonaze.Phonaze-iPhoneUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Phonaze_iPhone;
+			};
+			name = Debug;
+		};
+		33D5FE6F2D87F14900069A88 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = H7SJ9FJPVA;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "DB111Phonaze.Phonaze-iPhoneUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Phonaze_iPhone;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		33D5FE3E2D87F14800069A88 /* Build configuration list for PBXProject "Phonaze_iPhone" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				33D5FE652D87F14900069A88 /* Debug */,
+				33D5FE662D87F14900069A88 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		33D5FE672D87F14900069A88 /* Build configuration list for PBXNativeTarget "Phonaze_iPhone" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				33D5FE682D87F14900069A88 /* Debug */,
+				33D5FE692D87F14900069A88 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		33D5FE6A2D87F14900069A88 /* Build configuration list for PBXNativeTarget "Phonaze_iPhoneTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				33D5FE6B2D87F14900069A88 /* Debug */,
+				33D5FE6C2D87F14900069A88 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		33D5FE6D2D87F14900069A88 /* Build configuration list for PBXNativeTarget "Phonaze_iPhoneUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				33D5FE6E2D87F14900069A88 /* Debug */,
+				33D5FE6F2D87F14900069A88 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 33D5FE3B2D87F14800069A88 /* Project object */;
+}
