@@ -23,17 +23,8 @@ struct WebControlView: View {
                         lastDragValue = .zero
                     }
             )
-            .simultaneousGesture(
-                TapGesture()
-                    .onEnded { location in
-                        // TapGesture does not provide location, so use highPriorityGesture with DragGesture or onTapGesture with location
-                    }
-            )
-            .onTapGesture { location in
-                let xRatio = location.x / geo.size.width
-                let yRatio = location.y / geo.size.height
-                let message = String(format: "WEB_TAP:%.3f,%.3f", xRatio, yRatio)
-                connectivityManager.sendMessage(message)
+            .onTapGesture {
+                connectivityManager.sendMessage("WEB_TAP")
             }
         }
         .navigationTitle("WebControl")

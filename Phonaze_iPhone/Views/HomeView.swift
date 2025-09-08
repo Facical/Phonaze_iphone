@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import WebKit
 
 struct HomeView: View {
     var body: some View {
@@ -29,6 +30,15 @@ struct HomeView: View {
                     .background(Color.green)
                     .cornerRadius(8)
             }
+            
+            NavigationLink(destination: WebRemoteView()) {
+                Text("Go to Web Remote")
+                    .foregroundColor(.white)
+                    .padding()
+                    .background(Color.orange)
+                    .cornerRadius(8)
+            }
+
             
             Spacer()
         }
