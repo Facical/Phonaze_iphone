@@ -16,9 +16,10 @@ enum WireMessage: Codable {
     case modeSet(ModeSet)
     case webTap(WebTap)
     case webScroll(WebScroll)
+    case webHoverTap
     
     enum CodingKeys: String, CodingKey { case type, payload }
-    enum Kind: String, Codable { case hello, ping, pong, modeSet, webTap, webScroll }
+    enum Kind: String, Codable { case hello, ping, pong, modeSet, webTap, webScroll, webHoverTap}
     
     init(from decoder: Decoder) throws {
         let c = try decoder.container(keyedBy: CodingKeys.self)
@@ -29,6 +30,7 @@ enum WireMessage: Codable {
         case .modeSet:  self = .modeSet(try c.decode(ModeSet.self,forKey: .payload))
         case .webTap:   self = .webTap(try c.decode(WebTap.self,  forKey: .payload))
         case .webScroll:self = .webScroll(try c.decode(WebScroll.self,forKey: .payload))
+        case .webHoverTap: self = .webHoverTap
         }
     }
     func encode(to encoder: Encoder) throws {
@@ -40,6 +42,7 @@ enum WireMessage: Codable {
         case .modeSet(let p):  try c.encode(Kind.modeSet, forKey: .type); try c.encode(p, forKey: .payload)
         case .webTap(let p):   try c.encode(Kind.webTap,  forKey: .type); try c.encode(p, forKey: .payload)
         case .webScroll(let p):try c.encode(Kind.webScroll,forKey: .type);try c.encode(p, forKey: .payload)
+        case .webHoverTap:     try c.encode(Kind.webHoverTap, forKey: .type)
         }
     }
 }
@@ -150,6 +153,10 @@ class ConnectivityManager: NSObject, ObservableObject {
     func sendWebScroll(dx: Double, dy: Double) {
         sendWire(.webScroll(.init(dx: dx, dy: dy)))
     }
+    
+    func sendWebHoverTap() {
+            sendWire(.webHoverTap)
+        }
     
     /// 모드 변경 전송
     func sendModeChange(_ mode: String) {
