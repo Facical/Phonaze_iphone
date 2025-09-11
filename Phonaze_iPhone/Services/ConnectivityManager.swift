@@ -85,7 +85,21 @@ class ConnectivityManager: NSObject, ObservableObject {
     @Published var receivedMessage: String = ""
     @Published var receivedWire: WireMessage?
     @Published var isConnected: Bool = false
+    @Published var connectedPeerName: String? = nil
     @Published var currentMode: String = "directTouch"
+    
+    // MARK: - 실험 관련 추가 기능
+    @Published var isExperimentMode: Bool = false
+    @Published var currentExperimentMode: String = "directTouch"
+    
+    // 인터랙션 로깅
+    private var interactionLogs: [InteractionLog] = []
+    
+    struct InteractionLog {
+        let timestamp: Date
+        let type: String
+        let details: String
+    }
     
     override init() {
         super.init()
@@ -137,6 +151,7 @@ class ConnectivityManager: NSObject, ObservableObject {
         do {
             try session.send(data, toPeers: session.connectedPeers, with: .reliable)
             print("Sent legacy message: \(message)")
+            logInteraction(type: "message", details: message)
         } catch {
             print("메시지 전송 실패: \(error.localizedDescription)")
         }
@@ -147,21 +162,137 @@ class ConnectivityManager: NSObject, ObservableObject {
     /// Web 탭 전송 (JSON)
     func sendWebTap(nx: Double, ny: Double) {
         sendWire(.webTap(.init(nx: nx, ny: ny)))
+        logInteraction(type: "web_tap", details: "nx: \(nx), ny: \(ny)")
     }
     
     /// Web 스크롤 전송 (JSON)
     func sendWebScroll(dx: Double, dy: Double) {
         sendWire(.webScroll(.init(dx: dx, dy: dy)))
+        logInteraction(type: "web_scroll", details: "dx: \(dx), dy: \(dy)")
     }
     
+    /// 시선 기반 탭 전송
     func sendWebHoverTap() {
-            print("iPhone: Sending webHoverTap") // 디버그 로그 추가
-            sendWire(.webHoverTap)
+        print("iPhone: Sending webHoverTap")
+        sendWire(.webHoverTap)
+        logInteraction(type: "hover_tap", details: "Gaze-based tap sent")
+    }
+    
+    /// 정밀 스크롤 전송
+    func sendPrecisionScroll(dx: Double, dy: Double) {
+        // 작은 단위로 나누어 전송
+        let steps = 5
+        let stepDx = dx / Double(steps)
+        let stepDy = dy / Double(steps)
+        
+        for _ in 0..<steps {
+            sendWebScroll(dx: stepDx, dy: stepDy)
+            Thread.sleep(forTimeInterval: 0.01)
         }
+        
+        logInteraction(type: "precision_scroll", details: "dx: \(dx), dy: \(dy)")
+    }
+    
+    /// 제스처 기반 명령 전송
+    func sendGestureCommand(_ gesture: String) {
+        let message = "GESTURE:\(gesture)"
+        sendMessage(message)
+        logInteraction(type: "gesture", details: gesture)
+    }
     
     /// 모드 변경 전송
     func sendModeChange(_ mode: String) {
         sendWire(.modeSet(.init(mode: mode)))
+        currentMode = mode
+        logInteraction(type: "mode_change", details: mode)
+    }
+    
+    // MARK: - Navigation Commands
+    
+    func sendNavigationCommand(_ command: String) {
+        let message = "WEB_NAV:\(command)"
+        sendMessage(message)
+        logInteraction(type: "navigation", details: command)
+    }
+    
+    func sendURLCommand(_ url: String) {
+        let message = "WEB_URL:\(url)"
+        sendMessage(message)
+        logInteraction(type: "url", details: url)
+    }
+    
+    // MARK: - Experiment Mode
+    
+    func setExperimentMode(_ enabled: Bool, mode: String = "directTouch") {
+        isExperimentMode = enabled
+        currentExperimentMode = mode
+        
+        if enabled {
+            sendMessage("EXP_MODE:ON:\(mode)")
+            startLogging()
+        } else {
+            sendMessage("EXP_MODE:OFF")
+            stopLogging()
+        }
+    }
+    
+    private func startLogging() {
+        interactionLogs.removeAll()
+        print("📊 Started experiment logging")
+    }
+    
+    private func stopLogging() {
+        _ = exportLogs()
+        print("📊 Stopped experiment logging")
+    }
+    
+    private func logInteraction(type: String, details: String) {
+        guard isExperimentMode else { return }
+        
+        let log = InteractionLog(
+            timestamp: Date(),
+            type: type,
+            details: details
+        )
+        interactionLogs.append(log)
+    }
+    
+    // MARK: - Data Export
+    
+    func exportLogs() -> URL? {
+        guard !interactionLogs.isEmpty else { return nil }
+        
+        var lines: [String] = []
+        lines.append("timestamp,type,details")
+        
+        let formatter = ISO8601DateFormatter()
+        for log in interactionLogs {
+            let line = [
+                formatter.string(from: log.timestamp),
+                log.type,
+                "\"\(log.details)\""
+            ].joined(separator: ",")
+            lines.append(line)
+        }
+        
+        let filename = "iPhone_Interactions_\(Int(Date().timeIntervalSince1970)).csv"
+        let text = lines.joined(separator: "\n")
+        
+        do {
+            let dir = try FileManager.default.url(
+                for: .documentDirectory,
+                in: .userDomainMask,
+                appropriateFor: nil,
+                create: true
+            )
+            let url = dir.appendingPathComponent(filename)
+            try text.write(to: url, atomically: true, encoding: .utf8)
+            print("📁 Exported: \(filename)")
+            return url
+        } catch {
+            print("Export error: \(error)")
+            return nil
+        }
     }
     
     // MARK: - Private Methods
@@ -181,6 +312,7 @@ class ConnectivityManager: NSObject, ObservableObject {
             
         case .modeSet(let m):
             currentMode = m.mode
+            currentExperimentMode = m.mode
             print("Mode changed to: \(m.mode)")
             
         default:
@@ -196,7 +328,9 @@ extension ConnectivityManager: MCSessionDelegate {
             self.connectedPeers = session.connectedPeers
             self.isConnected = !session.connectedPeers.isEmpty
             
-            if state == .connected {
+            switch state {
+            case .connected:
+                self.connectedPeerName = peerID.displayName
                 // 연결되면 자동으로 핸드셰이크
                 self.sendWire(.hello(.init(
                     role: .iphone,
@@ -206,6 +340,17 @@ extension ConnectivityManager: MCSessionDelegate {
                 
                 // 선택적: Ping 테스트
                 self.sendWire(.ping(.init(t: Date().timeIntervalSince1970)))
+                
+            case .notConnected:
+                if self.connectedPeers.isEmpty {
+                    self.connectedPeerName = nil
+                }
+                
+            case .connecting:
+                print("Connecting to: \(peerID.displayName)")
+                
+            @unknown default:
+                break
             }
         }
         print("피어 \(peerID.displayName) 상태 변경: \(state.rawValue)")
@@ -229,6 +374,47 @@ extension ConnectivityManager: MCSessionDelegate {
         print("iPhone이 받은 메시지: \"\(message)\" from \(peerID.displayName)")
         DispatchQueue.main.async {
             self.receivedMessage = message
+            
+            // 실험 상태 메시지 처리
+            if message.hasPrefix("EXP_STATE:") {
+                self.handleExperimentStateMessage(message)
+            }
+        }
+    }
+    
+    private func handleExperimentStateMessage(_ message: String) {
+        // EXP_STATE:FOCUS:id
+        // EXP_STATE:TARGET:id
+        // EXP_STATE:PHASE:phase
+        // EXP_STATE:SCORE:n/goal
+        // EXP_STATE:ERROR:count
+        
+        let components = message.split(separator: ":")
+        guard components.count >= 2 else { return }
+        
+        switch components[1] {
+        case "FOCUS":
+            if components.count > 2 {
+                print("Focus changed to: \(components[2])")
+            }
+        case "TARGET":
+            if components.count > 2 {
+                print("Target set to: \(components[2])")
+            }
+        case "PHASE":
+            if components.count > 2 {
+                print("Phase changed to: \(components[2])")
+            }
+        case "SCORE":
+            if components.count > 2 {
+                print("Score: \(components[2])")
+            }
+        case "ERROR":
+            if components.count > 2 {
+                print("Error count: \(components[2])")
+            }
+        default:
+            break
         }
     }
     
