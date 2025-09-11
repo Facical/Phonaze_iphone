@@ -39,7 +39,7 @@ struct WebRemoteView: View {
                     RoundedRectangle(cornerRadius: 16).fill(Color(.systemGray6))
                     VStack {
                         Text("TouchPad").font(.footnote)
-                        Text("Tap to Select, Drag to Scroll").font(.caption2) // 텍스트 변경
+                        Text("Tap where you're looking, Drag to Scroll").font(.caption2) // 텍스트 변경
                     }.foregroundColor(.secondary)
                 }
                 .gesture(
@@ -60,9 +60,8 @@ struct WebRemoteView: View {
                         .onEnded { value in
                             let distance = hypot(value.translation.width, value.translation.height)
                             if distance < 10 {
-                                // ✅ [핵심 수정] 탭 위치와 관계없이 항상 화면 중앙(0.5, 0.5)을 클릭하도록 신호를 보냅니다.
-                                // 이것이 Vision Pro에서 "바라보는 곳을 탭"하는 경험을 구현합니다.
-                                connectivityManager.sendWebTap(nx: 0.5, ny: 0.5)
+                                // ✅ [핵심 수정] 시선이 머무는 곳을 탭하는 HoverTap 신호 전송
+                                connectivityManager.sendWebHoverTap()
                                 impactMedium.impactOccurred()
                             }
                             lastDragPoint = nil

@@ -155,6 +155,7 @@ class ConnectivityManager: NSObject, ObservableObject {
     }
     
     func sendWebHoverTap() {
+            print("iPhone: Sending webHoverTap") // 디버그 로그 추가
             sendWire(.webHoverTap)
         }
     
